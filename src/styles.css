@@ -1,0 +1,223 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+/* Base Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #1e293b; /* Medium-dark background */
+  margin: 0;
+  padding: 0;
+  color: #e5e7eb;
+}
+
+/* Typography Reset */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Animated and Bold Page Title */
+.page-title,
+.heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #f9fafb;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: slideInDown 0.6s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Error Message Styling */
+.error {
+  color: #f87171;
+  text-align: center;
+}
+
+/* Container Layout */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding-bottom: 4rem;
+}
+
+/* Product Card */
+.product-card {
+  background: #334155; /* Lighter card against medium dark background */
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  border: 1px solid #475569;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.15), transparent 60%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.product-image {
+  height: 180px;
+  width: 180px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #f3f4f6;
+  z-index: 1;
+}
+
+.product-desc {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+  text-align: center;
+  height: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 1;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #10b981;
+  margin-top: auto;
+  z-index: 1;
+}
+
+/* Fix card stacking / merging issues by adding bottom margin */
+.product-link {
+  display: block;
+  margin-bottom: 2rem; /* add bottom space */
+}
+
+/* Product Detail Page */
+.detail-container {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.detail-card {
+  background: #334155;
+  border-radius: 16px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center;
+  transition: box-shadow 0.3s ease-in-out;
+  border: 1px solid #475569;
+}
+
+.detail-card:hover {
+  box-shadow: 0 14px 40px rgba(34, 197, 94, 0.3);
+}
+
+.detail-image {
+  max-width: 350px;
+  width: 100%;
+  height: 350px;
+  object-fit: contain;
+  background-color: #475569;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.detail-content {
+  flex: 1 1 400px;
+}
+
+.detail-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #f9fafb;
+  margin-bottom: 1rem;
+}
+
+.detail-description {
+  font-size: 1rem;
+  color: #d1d5db;
+  margin-bottom: 2rem;
+}
+
+.detail-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #10b981;
+  margin-bottom: 0.5rem;
+}
+
+.detail-category {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+}
+
+.detail-category span {
+  color: #60a5fa;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+/* Glassy Button */
+.btn-add-to-cart {
+  background: rgba(59, 130, 246, 0.2);
+  color: #ffffff;
+  padding: 14px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid #3b82f6;
+  border-radius: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s ease-in-out, border-color 0.3s;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #3b82f6;
+  border-color: #2563eb;
+}
